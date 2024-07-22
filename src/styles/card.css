@@ -1,0 +1,65 @@
+.pokemon-component {
+    padding: 20px;
+    text-align: center;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pokemon-card {
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    padding: 16px;
+    background-color: #fff; /* Light background */
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for both hover effects and shadow */
+    cursor: pointer;
+    position: relative; /* For the shadow and positioning */
+    animation: float 4s ease-in-out infinite; /* Floating animation */
+}
+
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+}
+
+.error {
+    color: red;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Move up */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.pokemon-card:hover {
+    transform: scale(1.1); /* Slightly enlarge the card */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    .pokemon-card {
+        animation: float 3s ease-in-out infinite; /* Faster animation for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .pokemon-card {
+        width: 150px; /* Smaller card size for very small screens */
+        animation: float 2.5s ease-in-out infinite; /* Even faster animation for very small screens */
+    }
+}
